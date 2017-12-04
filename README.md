@@ -19,6 +19,6 @@ __IS__ a tool for English language learners. Just like toddlers put colored bloc
 2. draggability, flip effect, audio (I'll see what's out there)
 3. shuffling cards; changing to a different grammar board
 
-_(will research needed libraries, if any; probably will opt for plain JS when able)_
+_(will research needed libraries)_
 
 __After receiving feedback, can adapt accordingly to show off other JS functionality. Then, will update above with additional features.__
