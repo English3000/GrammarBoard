@@ -19,6 +19,6 @@ __IS__ a tool for English language learners. Just like toddlers put colored bloc
 2. draggability, flip effect, audio (I'll see what's out there)
 3. shuffling cards; changing to a different grammar board
 
-_(will research needed libraries)_
+_Libraries: [howler.js](https://github.com/goldfire/howler.js#documentation)_
 
 __After receiving feedback, can adapt accordingly to show off other JS functionality. Then, will update above with additional features.__
