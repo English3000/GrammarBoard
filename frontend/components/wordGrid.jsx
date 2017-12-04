@@ -7,29 +7,27 @@ export default class WordGrid extends React.Component {
   }
 
   render() {
-    return (<div>
-      <table id='word-grid'>
-        <tr>
-          <td><WordCard/></td>
-          <td><WordCard/></td>
-          <td><WordCard/></td>
-          <td><WordCard/></td>
-        </tr>
+    return (<table id='word-grid'>
+      <div className='flex'>
+        <div className='card'><WordCard/></div>
+        <div className='card'><WordCard/></div>
+        <div className='card'><WordCard/></div>
+        <div className='card'><WordCard/></div>
+      </div>
 
-        <tr>
-          <td><WordCard/></td>
-          <td><WordCard/></td>
-          <td><WordCard/></td>
-          <td><WordCard/></td>
-        </tr>
+      <div className='flex'>
+        <div className='card'><WordCard/></div>
+        <div className='card'><WordCard/></div>
+        <div className='card'><WordCard/></div>
+        <div className='card'><WordCard/></div>
+      </div>
 
-        <tr>
-          <td><WordCard/></td>
-          <td><WordCard/></td>
-          <td><WordCard/></td>
-          <td><WordCard/></td>
-        </tr>
-      </table>
-    </div>);
+      <div className='flex'>
+        <div className='card'><WordCard/></div>
+        <div className='card'><WordCard/></div>
+        <div className='card'><WordCard/></div>
+        <div className='card'><WordCard/></div>
+      </div>
+    </table>);
   }
 }

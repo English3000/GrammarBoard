@@ -13,3 +13,38 @@
  *= require_tree .
  *= require_self
  */
+.ghostwhite {
+  background-color: ghostwhite;
+}
+
+.flex {
+  display: flex;
+}
+
+#word-grid {
+  /*width: 600px;*/
+  margin: 10px auto;
+}
+
+.card {
+  box-sizing: border-box;
+  width: 150px;
+  height: 150px;
+  border-radius: 15px;
+  border: 1.5px black solid;
+  margin: 12.5px;
+}
+
+.no-margin {
+  margin: 0;
+  border: 0;
+}
+
+#sentence-area {
+  margin: 0 auto;
+  margin-top: 25px;
+  width: 750px;
+  border: 1px solid black;
+  border-radius: 15px;
+  height: 200px;
+}
