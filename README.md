@@ -1,24 +1,24 @@
-# README
+# GrammarBoard
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+__IS__ a tool for English language learners. Just like toddlers put colored blocks into slots of the proper shape, GrammarBoard users learn both vocabulary and grammar in a similarly interactive manner--all without needing to know a word!
 
-Things you may want to cover:
+## Layout
 
-* Ruby version
+### card component
+![card](https://github.com/English3000/GrammarBoard/blob/master/word.png)
 
-* System dependencies
+### board component
+![board](https://github.com/English3000/GrammarBoard/blob/master/board.png)
 
-* Configuration
+### extra features (if time)
+![extras](https://github.com/English3000/GrammarBoard/blob/master/extras.png)
 
-* Database creation
+## Execution:
+0. seed database (sun., Day 0)
+1. div grid & grammar board area; skeleton color-matching logic; random card population
+2. draggability, flip effect, audio (I'll see what's out there)
+3. shuffling cards; changing to a different grammar board
 
-* Database initialization
+_(will research needed libraries, if any; probably will opt for plain JS when able)_
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+__After receiving feedback, can adapt accordingly to show off other JS functionality. Then, will update above with additional features.__
