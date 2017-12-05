@@ -11,13 +11,30 @@ export default class SentenceArea extends React.Component {
   }
 
   render() {
-    return (<div id='sentence-area' className='flex-center'>
-      <div className='article' onDragOver={(event) => event.preventDefault()}
-                               onDrop={this.drop}></div>
-      <div className='noun' onDragOver={(event) => event.preventDefault()}
-                            onDrop={this.drop}></div>
-      <div className='verb' onDragOver={(event) => event.preventDefault()}
-                            onDrop={this.drop}></div>
+    return (<div><div id='sentence-area' className='flex-center'>
+      <div className=' grammar-board flex'>
+        <div className='grammar-box article' onDragOver={(event) => event.preventDefault()}
+             onDrop={this.drop}></div>
+        <div className='grammar-box noun' onDragOver={(event) => event.preventDefault()}
+             onDrop={this.drop}></div>
+        <div className='grammar-box verb' onDragOver={(event) => event.preventDefault()}
+             onDrop={this.drop}></div>
+      </div>
+
+      <div className='grammar-board flex hidden'>
+        <div className='grammar-box article' onDragOver={(event) => event.preventDefault()}
+             onDrop={this.drop}></div>
+        <div className='grammar-box adj' onDragOver={(event) => event.preventDefault()}
+             onDrop={this.drop}></div>
+        <div className='grammar-box noun' onDragOver={(event) => event.preventDefault()}
+             onDrop={this.drop}></div>
+        <div className='grammar-box verb' onDragOver={(event) => event.preventDefault()}
+             onDrop={this.drop}></div>
+        <div className='grammar-box adverb' onDragOver={(event) => event.preventDefault()}
+             onDrop={this.drop}></div>
+      </div>
+      <div className='fa fa-refresh fa-2x'></div>
+    </div>
     </div>);
   }
 }

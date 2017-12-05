@@ -49,10 +49,10 @@ The background-color of the text-side is a hack to teach grammar without the nee
   * making SentenceArea trigger audio of each Card in order if all its `div`s are filled
 
 #### 3. higher functionality
-  * dealing a new hand of cards
+  * dealing a new hand of cards [__COMPLETED__]
   * changing to a different grammar board (sequence of `div`s) in the SentenceArea
   * creating a sidebar of non-image helper words (e.g. _the_, _to_) with __basic functionality__
-  
+
 #### 4. polish
   * appealing CSS for all components
   * engaging effects on interaction with components

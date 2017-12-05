@@ -26,9 +26,26 @@
   justify-content: center;
 }
 
+.flex-end {
+  width: 700px;
+  display: flex;
+  justify-content: flex-end;
+}
+
 #word-grid {
   width: 700px;
   margin: 10px auto;
+}
+
+.fa-refresh {
+  background-color: beige;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 0 1px black;
+  height: 100%;
+  max-height: 30px;
+  margin-left: 5px;
+  cursor: pointer;
 }
 
 .card {
@@ -46,7 +63,7 @@
 }
 
 .hidden {
-  visibility: hidden;
+  display: none;
 }
 
 .no-margin {
@@ -57,7 +74,7 @@
 
 #sentence-area {
   margin: 0 auto;
-  margin-top: 25px;
+  /*margin-top: 25px;*/
   width: 725px;
   border: 1px solid black;
   border-radius: 15px;
@@ -65,9 +82,14 @@
   height: 175px;
 }
 
-#sentence-area div {
+.grammar-board {
+  margin-left: 200px;
+  width: 725px;
+}
+
+.grammar-box {
   max-width: 175px;
-  width: 100%;
+  min-width: 125px;
   min-height: 175px;
 }
 
@@ -85,4 +107,8 @@
 
 .adj {
   background-color: yellowgreen;
+}
+
+.adverb {
+  background-color: red;
 }
