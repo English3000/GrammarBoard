@@ -7,4 +7,10 @@ export const receiveCards = cards => ({
   cards
 });
 
-export const fetchCards = () => async (dispatch) => dispatch( receiveCards(await API.fetchPosts()) );
+export const fetchCards = () => async (dispatch) => {
+  dispatch(pageLoading());
+  return dispatch( receiveCards(await API.fetchCards()) );
+}
+
+export const PAGE_LOADING = 'PAGE_LOADING';
+export const pageLoading = () => ({type: PAGE_LOADING});

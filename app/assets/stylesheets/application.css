@@ -21,30 +21,64 @@
   display: flex;
 }
 
+.flex-center {
+  display: flex;
+  justify-content: center;
+}
+
 #word-grid {
-  /*width: 600px;*/
+  width: 700px;
   margin: 10px auto;
 }
 
 .card {
-  box-sizing: border-box;
   width: 150px;
   height: 150px;
   border-radius: 15px;
-  border: 1.5px black solid;
+  box-shadow: 0 0 1.5px black;
   margin: 12.5px;
+}
+
+.card img {
+  width: 150px;
+  height: 150px;
+  border-radius: 15px;
 }
 
 .no-margin {
   margin: 0;
   border: 0;
+  background-color: beige;
 }
 
 #sentence-area {
   margin: 0 auto;
   margin-top: 25px;
-  width: 750px;
+  width: 725px;
   border: 1px solid black;
   border-radius: 15px;
-  height: 200px;
+  padding: 12.5px;
+  height: 175px;
+}
+
+#sentence-area div {
+  max-width: 175px;
+  width: 100%;
+  min-height: 175px;
+}
+
+.verb {
+  background-color: tomato;
+}
+
+.noun {
+  background-color: gold;
+}
+
+.article {
+  background-color: goldenrod;
+}
+
+.adj {
+  background-color: yellowgreen;
 }
