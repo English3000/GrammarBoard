@@ -5,7 +5,7 @@ export default class SentenceArea extends React.Component {
     event.preventDefault();
     let card = event.dataTransfer.getData('card');
     console.log(document.getElementById(card).className);
-    if (document.getElementById(card).className.includes(event.target.className)) {
+    if (document.getElementById(card).className.includes(event.target.className) && !event.target.hasChildNodes()) {
       event.target.appendChild(document.getElementById(card));
     }
   }

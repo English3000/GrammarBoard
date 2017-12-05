@@ -4,13 +4,11 @@ end
 
 json.deck do
   @cards.each do |card|
-    # image_src = `app/assets/images/#{card.word}.png`
-    # audio_src = `app/assets/audio/#{card.word}.png`
     json.set! card.id do
       json.word card.word
       json.part_of_speech card.part_of_speech
-      # json.image asset_path(img_src)
-      # json.audio asset_path(audio_src)
+      json.image asset_path(card.image.url(:original))
+      json.audio asset_path(card.audio.url(:original))
     end
   end
 end

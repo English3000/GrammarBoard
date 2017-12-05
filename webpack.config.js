@@ -38,6 +38,26 @@ module.exports = {
         query: {
           presets: ['react', 'env']
         }
+      },
+      {
+        test: /\.(woff2?|jpe?g|png|gif|svg|ico)$/,
+        loader: 'url-loader',
+        options: {
+            name: '[name]-[hash].[ext]',
+            limit: 10000,
+        }
+      },
+      {
+        test: /\.(m4a)$/,
+        use: {
+
+          loader: 'file-loader',
+          options: {
+            name: '[name][md5:hash].[ext]',
+            outputPath: 'audio/',
+            publicPath: '/assets/audio/'
+          }
+        }
       }
     ]
   },

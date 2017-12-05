@@ -39,10 +39,14 @@
   margin: 12.5px;
 }
 
-.card img {
+.side {
   width: 150px;
   height: 150px;
   border-radius: 15px;
+}
+
+.hidden {
+  visibility: hidden;
 }
 
 .no-margin {
