@@ -19,7 +19,7 @@ export default class SentenceArea extends React.Component {
   }
 
   render() {
-    return (<div><div id='sentence-area' className='flex-center'>
+    return (<div><div id='sentence-area' className='flex'>
       <div className=' grammar-board flex visible'>
         <div className='article' onDragOver={(event) => event.preventDefault()}
              onDrop={this.drop}></div>
