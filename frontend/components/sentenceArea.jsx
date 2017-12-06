@@ -3,10 +3,13 @@ import React from 'react';
 export default class SentenceArea extends React.Component {
   drop(event) {
     event.preventDefault();
-    let card = event.dataTransfer.getData('card');
-    console.log(document.getElementById(card).className);
-    if (document.getElementById(card).className.includes(event.target.className) && !event.target.hasChildNodes()) {
-      event.target.appendChild(document.getElementById(card));
+    let card = event.dataTransfer.getData('selected');
+    console.log(document.getElementById('selected').className);
+    if (document.getElementById('selected').className.includes(event.target.className) && !event.target.hasChildNodes()) {
+      event.target.appendChild(document.getElementById('selected'));
+    }
+    if (document.getElementsByClassName('grammar-box').forEach(el => el.hasChildNodes())) {
+      document.getElementsByClassName('grammar-box').forEach(el => el.children()[0]/* play audio */);
     }
   }
 

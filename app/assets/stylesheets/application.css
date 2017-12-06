@@ -26,6 +26,11 @@
   justify-content: center;
 }
 
+.flex-middle {
+  display: flex;
+  align-items: center;
+}
+
 .flex-end {
   width: 700px;
   display: flex;
@@ -56,10 +61,34 @@
   margin: 12.5px;
 }
 
-.side {
+.side1 {
+  backface-visibility: hidden;
+  transform-origin: 50% 50% 0px;
+  transition: all 1.5s;
   width: 150px;
   height: 150px;
   border-radius: 15px;
+}
+
+.side2 {
+  position: relative;
+  text-align: center;
+  top: -60%;
+  display: block;
+  width: 150px;
+}
+
+.image-side {
+  backface-visibility: hidden;
+  transform-origin: 50% 50% 0px;
+  transition: all 1.5s;
+  transform: rotateY(180deg);
+}
+
+.text-side {
+  backface-visibility: hidden;
+  /*transform-origin: 50% 50% 0px;
+  transition: all 1.5s;*/
 }
 
 .hidden {
@@ -111,4 +140,8 @@
 
 .adverb {
   background-color: red;
+}
+
+.prep {
+  background-color: green;
 }
