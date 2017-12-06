@@ -5,6 +5,6 @@ import Connect from './connect';
 
 document.addEventListener('DOMContentLoaded', () => {
   const store = openStore();
-  window.getState = store.getState;
+  // window.getState = store.getState;
   ReactDOM.render(<Connect store={store}/>, document.getElementById('app-display'));
 });

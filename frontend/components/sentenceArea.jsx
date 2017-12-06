@@ -4,9 +4,6 @@ export default class SentenceArea extends React.Component {
   drop(event) {
     event.preventDefault();
     let card = event.dataTransfer.getData('text');
-    console.log(document.getElementById(card).className);
-    console.log(event.target.className);
-    console.log(event.target.hasChildNodes());
     if (document.getElementById(card).className.includes(event.target.className) && !event.target.hasChildNodes()) {
       event.target.appendChild(document.getElementById(card));
     }
@@ -15,9 +12,15 @@ export default class SentenceArea extends React.Component {
     }
   }
 
+  switchSentence() {
+    let second = document.querySelector('div.grammar-board.flex.hidden');
+    document.querySelector('div.grammar-board.flex.visible').className = 'grammar-board flex hidden';
+    second.className = 'grammar-board flex visible';
+  }
+
   render() {
     return (<div><div id='sentence-area' className='flex-center'>
-      <div className=' grammar-board flex'>
+      <div className=' grammar-board flex visible'>
         <div className='article' onDragOver={(event) => event.preventDefault()}
              onDrop={this.drop}></div>
         <div className='noun' onDragOver={(event) => event.preventDefault()}
@@ -38,7 +41,7 @@ export default class SentenceArea extends React.Component {
         <div className='adverb' onDragOver={(event) => event.preventDefault()}
              onDrop={this.drop}></div>
       </div>
-      <div className='fa fa-refresh fa-2x'></div>
+      <div className='fa fa-refresh fa-2x' onClick={this.switchSentence}></div>
     </div>
     </div>);
   }
