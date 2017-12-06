@@ -61,6 +61,7 @@
   margin: 12.5px;
 }
 
+/* guidance from: https://stackoverflow.com/questions/9058801/flip-div-with-two-sides-of-html */
 .side1 {
   backface-visibility: hidden;
   transform-origin: 50% 50% 0px;
@@ -116,7 +117,7 @@
   width: 725px;
 }
 
-.grammar-box {
+.grammar-board div {
   max-width: 175px;
   min-width: 125px;
   min-height: 175px;

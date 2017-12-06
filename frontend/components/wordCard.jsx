@@ -4,7 +4,7 @@ import { Howl } from 'howler';
 export default class WordCard extends React.Component {
   //help from: https://www.w3schools.com/html/html5_draganddrop.asp
   drag(event) {
-    event.dataTransfer.setData('selected', event.target.id);
+    event.dataTransfer.setData('text', event.target.id);
   }
 
   soundFlip(card) {
@@ -32,7 +32,7 @@ export default class WordCard extends React.Component {
 
   render() {
     const {card} = this.props;
-    return (<div className={`card no-margin ${card.part_of_speech}`}
+    return (<div id={`${this.props.id}`} className={`card no-margin ${card.part_of_speech}`}
                  draggable='true' onDragStart={this.drag} onClick={() => this.soundFlip(card)}>
             <img className={`${this.props.id} side1`} src={this.props.card.image}/>
             <span className={`${this.props.id} side2 text-side hidden`}>{this.props.card.word}</span>
