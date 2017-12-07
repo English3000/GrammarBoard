@@ -5,7 +5,9 @@ export default class SentenceArea extends React.Component {
     event.preventDefault();
     let card = event.dataTransfer.getData('text');
     if (document.getElementById(card).className.includes(event.target.className) && !event.target.hasChildNodes()) {
+      // const match = document.getElementById(card);//& removeChild from WordGrid div
       event.target.appendChild(document.getElementById(card));
+      // match.parent.removeChild(match);
     }
     setTimeout(() => {
       if (Array.from(document.querySelector('div.grammar-board.flex.visible').children).every(el => el.hasChildNodes())) {
@@ -25,12 +27,25 @@ export default class SentenceArea extends React.Component {
             });
           });
         }, 750 * words.length);
-        /* move all cards back to div's via card's id &  */
       }
     }, 0);
   }
 
   switchSentence() {
+    let words = Array.from(document.querySelector('div.grammar-board.flex.visible').children);
+    let cards = Array.from(document.querySelectorAll('div.card'));
+    words.forEach(el => {
+      if (el.hasChildNodes()) {
+        let wordDiv = el.removeChild(el.children[0]);
+        cards.forEach(cardDiv => {
+          if (!cardDiv.hasChildNodes() && wordDiv !== null) {
+            cardDiv.appendChild(wordDiv);
+            wordDiv = null;
+          }
+        });
+      }
+    });
+
     let second = document.querySelector('div.grammar-board.flex.hidden');
     document.querySelector('div.grammar-board.flex.visible').className = 'grammar-board flex hidden';
     second.className = 'grammar-board flex visible';

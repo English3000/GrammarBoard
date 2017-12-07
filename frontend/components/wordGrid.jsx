@@ -13,6 +13,21 @@ export default class WordGrid extends React.Component {
 
   //from: https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
   shuffle(array) {
+    if (document.querySelector('div.grammar-board.flex.visible')) {
+      let words = Array.from(document.querySelector('div.grammar-board.flex.visible').children);
+      let cards = Array.from(document.querySelectorAll('div.card'));
+      words.forEach(el => {
+        if (el.hasChildNodes()) {
+          let wordDiv = el.removeChild(el.children[0]);
+          cards.forEach(cardDiv => {
+            if (!cardDiv.hasChildNodes() && wordDiv !== null) {
+              cardDiv.appendChild(wordDiv);
+              wordDiv = null;
+            }
+          });
+        }
+      });
+    }
     // console.log('shuffling');
     for (let i = 0; i < array.length; i++) {
       let j = Math.floor(Math.random() * array.length);

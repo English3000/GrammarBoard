@@ -50,12 +50,12 @@ The background-color of the text-side is a hack to teach grammar without the nee
 
 #### 3. higher functionality
   * dealing a new hand of cards [__COMPLETED__]
-  * changing to a different grammar board (sequence of `div`s) in the SentenceArea [___MOSTLY completed___] (should push cards back to their `div`s; make S `div` w/ sound)
-  * creating a sidebar of non-image helper words (e.g. _the_, _to_) with __basic functionality__ [___MOSTLY completed___] (add audio)
+  * changing to a different grammar board (sequence of `div`s) in the SentenceArea [___MOSTLY completed___] (make S `div` w/ sound)
+  * creating a sidebar of non-image helper words (e.g. _the_, _to_) with __basic functionality__ [__COMPLETED__]
 
 #### 4. polish
-  * appealing CSS for all components (fix stretched images)
+  * appealing CSS for all components
   * engaging effects on interaction with components (make pointer default; switches to arrow on hover)
-  * clear UI for user to play game _(maybe even a demo of clicking & dragging a card if time)_
+  * clear UI for user to play game
 
 _Libraries: [howler.js](https://github.com/goldfire/howler.js#documentation) for audio; HTML5 for drag & drop; vanilla JS for functionality_
