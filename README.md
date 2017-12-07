@@ -43,18 +43,18 @@ The background-color of the text-side is a hack to teach grammar without the nee
   * logic for shuffling deck into random order
   * logic for dropping cards into the sentence area (or rejecting drops)
 
-#### 2. basic functionality
-  * making Cards draggable & droppable [__COMPLETED__]
-  * making Cards trigger audio & flip on click [__COMPLETED__]
+#### 2. basic functionality [__COMPLETED__]
+  * making Cards draggable & droppable
+  * making Cards trigger audio & flip on click
   * making SentenceArea trigger audio of each Card in order if all its `div`s are filled
 
 #### 3. higher functionality
   * dealing a new hand of cards [__COMPLETED__]
-  * changing to a different grammar board (sequence of `div`s) in the SentenceArea
-  * creating a sidebar of non-image helper words (e.g. _the_, _to_) with __basic functionality__ [___MOSTLY completed___]
+  * changing to a different grammar board (sequence of `div`s) in the SentenceArea [___MOSTLY completed___] (should push cards back to their `div`s; make S `div` w/ sound)
+  * creating a sidebar of non-image helper words (e.g. _the_, _to_) with __basic functionality__ [___MOSTLY completed___] (add audio)
 
 #### 4. polish
-  * appealing CSS for all components
+  * appealing CSS for all components (fix stretched images)
   * engaging effects on interaction with components
   * clear UI for user to play game _(maybe even a demo of clicking & dragging a card if time)_
 
