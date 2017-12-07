@@ -1,6 +1,5 @@
 import React from 'react';
 import WordCard from './wordCard';
-import LoadingIcon from '../loadingIcon';
 
 export default class WordGrid extends React.Component {
   constructor(props) {
@@ -9,11 +8,7 @@ export default class WordGrid extends React.Component {
   }
 
   componentWillMount() {
-    this.props.fetchCards().then(() => {
-      if (Object.keys(this.props.cards).length > 0) {
-        this.shuffle(this.props.cards.hand);
-      }
-    });
+    this.shuffle(this.props.cards.hand);
   }
 
   //from: https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
@@ -38,7 +33,7 @@ export default class WordGrid extends React.Component {
   render() {
     let {cards} = this.props;
 
-    return (this.props.pageLoading.status ? <LoadingIcon/> : Object.keys(cards).length > 0 ? <div id='word-grid' className='flex'>
+    return (<div id='word-grid' className='flex'>
       <div>
         <div className='flex'>
           <div className='card' onDragOver={(event) => event.preventDefault()} onDrop={this.drop}>
@@ -75,6 +70,6 @@ export default class WordGrid extends React.Component {
       </div>
 
       <div className='fa fa-refresh fa-2x' onClick={() => this.shuffle(cards.hand)}></div>
-    </div> : <LoadingIcon/>);
+    </div>);
   }
 }

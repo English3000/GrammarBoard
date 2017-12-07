@@ -13,7 +13,19 @@ export default class SentenceArea extends React.Component {
         for (let i = 0; i < words.length; i++) {
           setTimeout(() => words[i].children[0].click(), 750 * i);
         }
-        /* move all cards back to their orig. div's via card's id &  */
+        setTimeout(() => {
+          let cards = Array.from(document.querySelectorAll('div.card'));
+          words.forEach(el => {
+            let wordDiv = el.removeChild(el.children[0]);
+            cards.forEach(cardDiv => {
+              if (!cardDiv.hasChildNodes() && wordDiv !== null) {
+                cardDiv.appendChild(wordDiv);
+                wordDiv = null;
+              }
+            });
+          });
+        }, 750 * words.length);
+        /* move all cards back to div's via card's id &  */
       }
     }, 0);
   }
@@ -44,7 +56,7 @@ export default class SentenceArea extends React.Component {
              onDrop={this.drop}></div>
         <div className='verb' onDragOver={(event) => event.preventDefault()}
              onDrop={this.drop}></div>
-        <div className='adverb' onDragOver={(event) => event.preventDefault()}
+        <div className='adv' onDragOver={(event) => event.preventDefault()}
              onDrop={this.drop}></div>
       </div>
       <div className='fa fa-refresh fa-2x' onClick={this.switchSentence}></div>

@@ -136,6 +136,10 @@
   background-color: gold;
 }
 
+.pron {
+  background-color: yellow;
+}
+
 .article {
   background-color: goldenrod;
 }
@@ -144,10 +148,14 @@
   background-color: yellowgreen;
 }
 
-.adverb {
+.adv {
   background-color: red;
 }
 
 .prep {
   background-color: green;
+}
+
+.conj {
+  background-color: lightblue;
 }
