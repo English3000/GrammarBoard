@@ -13,6 +13,10 @@
  *= require_tree .
  *= require_self
  */
+.card:hover, .grammar-board:hover {
+  cursor: pointer;
+}
+
 .ghostwhite {
   background-color: ghostwhite;
 }
@@ -38,11 +42,11 @@
 }
 
 #word-grid {
-  width: 700px;
-  margin: 10px auto;
+  min-width: 800px;
+  margin: 10px;
 }
 
-.fa-refresh {
+.fa-refresh-styled {
   background-color: beige;
   padding: 10px;
   border-radius: 5px;
@@ -117,7 +121,7 @@
   border-radius: 15px;
   padding: 12.5px;
   height: 175px;
-  background: radial-gradient(lightgray, ghostwhite);
+  background: radial-gradient(white, ghostwhite);
 }
 
 .grammar-board {
@@ -136,7 +140,9 @@
 
 .s {
   background-color: tomato;
-  width: 12px;
+  max-width: 16px;
+  box-sizing: border-box;
+  padding: 49px/* 86px */ 2px 0;
 }
 
 .noun {
@@ -144,7 +150,7 @@
 }
 
 .pron {
-  background-color: yellow;
+  background-color: #FFFF66; /* lightyellow3 */
 }
 
 .article {

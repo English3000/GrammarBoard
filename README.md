@@ -55,7 +55,7 @@ The background-color of the text-side is a hack to teach grammar without the nee
 
 #### 4. polish
   * appealing CSS for all components
-  * engaging effects on interaction with components (make pointer default; switches to arrow on hover)
-  * clear UI for user to play game
+  * engaging effects on interaction with components
+  * clear UI for user to play game [__COMPLETED__]
 
 _Libraries: [howler.js](https://github.com/goldfire/howler.js#documentation) for audio; HTML5 for drag & drop; vanilla JS for functionality_

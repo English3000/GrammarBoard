@@ -46,7 +46,7 @@ export default class SentenceArea extends React.Component {
       }
     });
 
-    let second = document.querySelector('div.grammar-board.flex.hidden');
+    let second = document.querySelectorAll('div.grammar-board.flex.hidden')[Math.floor(Math.random() * 2)];
     document.querySelector('div.grammar-board.flex.visible').className = 'grammar-board flex hidden';
     second.className = 'grammar-board flex visible';
   }
@@ -60,6 +60,7 @@ export default class SentenceArea extends React.Component {
              onDrop={this.drop}></div>
         <div className='verb' onDragOver={(event) => event.preventDefault()}
              onDrop={this.drop}></div>
+        <div className='s'>s</div>
       </div>
 
       <div className='grammar-board flex hidden'>
@@ -71,10 +72,24 @@ export default class SentenceArea extends React.Component {
              onDrop={this.drop}></div>
         <div className='verb' onDragOver={(event) => event.preventDefault()}
              onDrop={this.drop}></div>
+        <div className='s'>s</div>
         <div className='adv' onDragOver={(event) => event.preventDefault()}
              onDrop={this.drop}></div>
       </div>
-      <div className='fa fa-refresh fa-2x' onClick={this.switchSentence}></div>
+
+      <div className='grammar-board flex hidden'>
+        <div className='pron' onDragOver={(event) => event.preventDefault()}
+             onDrop={this.drop}></div>
+        <div className='verb' onDragOver={(event) => event.preventDefault()}
+             onDrop={this.drop}></div>
+        <div className='prep' onDragOver={(event) => event.preventDefault()}
+             onDrop={this.drop}></div>
+        <div className='article' onDragOver={(event) => event.preventDefault()}
+             onDrop={this.drop}></div>
+        <div className='noun' onDragOver={(event) => event.preventDefault()}
+             onDrop={this.drop}></div>
+      </div>
+      <div className='fa fa-refresh fa-refresh-styled fa-2x' onClick={this.switchSentence}></div>
     </div>
     </div>);
   }

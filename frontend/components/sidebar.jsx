@@ -21,7 +21,6 @@ export default class Sidebar extends React.Component {
 
   render() {
     const {cards} = this.props;
-    console.log(cards);
     return (<div>
       <div className='card' onDragOver={(event) => event.preventDefault()} onDrop={this.drop}>
         <div id={`${cards.helpers[0]}`} onClick={() => this.sound(cards.helper_words[cards.helpers[0]].audio)}

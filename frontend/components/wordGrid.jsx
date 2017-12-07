@@ -59,32 +59,38 @@ export default class WordGrid extends React.Component {
             <WordCard id={cards.hand[2]} card={cards.deck[cards.hand[2]]}/></div>
           <div className='card' onDragOver={(event) => event.preventDefault()} onDrop={this.drop}>
             <WordCard id={cards.hand[3]} card={cards.deck[cards.hand[3]]}/></div>
+          <div className='card' onDragOver={(event) => event.preventDefault()} onDrop={this.drop}>
+            <WordCard id={cards.hand[4]} card={cards.deck[cards.hand[4]]}/></div>
         </div>
 
         <div className='flex'>
-          <div className='card' onDragOver={(event) => event.preventDefault()} onDrop={this.drop}>
-            <WordCard id={cards.hand[4]} card={cards.deck[cards.hand[4]]}/></div>
           <div className='card' onDragOver={(event) => event.preventDefault()} onDrop={this.drop}>
             <WordCard id={cards.hand[5]} card={cards.deck[cards.hand[5]]}/></div>
           <div className='card' onDragOver={(event) => event.preventDefault()} onDrop={this.drop}>
             <WordCard id={cards.hand[6]} card={cards.deck[cards.hand[6]]}/></div>
           <div className='card' onDragOver={(event) => event.preventDefault()} onDrop={this.drop}>
             <WordCard id={cards.hand[7]} card={cards.deck[cards.hand[7]]}/></div>
-        </div>
-
-        <div className='flex'>
           <div className='card' onDragOver={(event) => event.preventDefault()} onDrop={this.drop}>
             <WordCard id={cards.hand[8]} card={cards.deck[cards.hand[8]]}/></div>
           <div className='card' onDragOver={(event) => event.preventDefault()} onDrop={this.drop}>
             <WordCard id={cards.hand[9]} card={cards.deck[cards.hand[9]]}/></div>
+        </div>
+
+        <div className='flex'>
           <div className='card' onDragOver={(event) => event.preventDefault()} onDrop={this.drop}>
             <WordCard id={cards.hand[10]} card={cards.deck[cards.hand[10]]}/></div>
           <div className='card' onDragOver={(event) => event.preventDefault()} onDrop={this.drop}>
             <WordCard id={cards.hand[11]} card={cards.deck[cards.hand[11]]}/></div>
+          <div className='card' onDragOver={(event) => event.preventDefault()} onDrop={this.drop}>
+            <WordCard id={cards.hand[12]} card={cards.deck[cards.hand[12]]}/></div>
+          <div className='card' onDragOver={(event) => event.preventDefault()} onDrop={this.drop}>
+            <WordCard id={cards.hand[13]} card={cards.deck[cards.hand[13]]}/></div>
+          <div className='card' onDragOver={(event) => event.preventDefault()} onDrop={this.drop}>
+            <WordCard id={cards.hand[14]} card={cards.deck[cards.hand[14]]}/></div>
         </div>
       </div>
 
-      <div className='fa fa-refresh fa-2x' onClick={() => this.shuffle(cards.hand)}></div>
+      <div className='fa fa-refresh fa-refresh-styled fa-2x' onClick={() => this.shuffle(cards.hand)}></div>
     </div>);
   }
 }
