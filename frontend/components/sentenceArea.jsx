@@ -78,7 +78,7 @@ export default class SentenceArea extends React.Component {
     pronunciation.play();
   }
 
-  render() {
+  render() { //could add s <div> for nouns too, but requires more suffixes & logic
     const {cards} = this.props;
     return (<div><div id='sentence-area' className='flex'>
       <div className='flex-middle absolute arrow'><div><p>DRAG HERE</p>
@@ -91,9 +91,32 @@ export default class SentenceArea extends React.Component {
         <div className='verb' onDragOver={(event) => event.preventDefault()}
              onDrop={this.drop}></div>
         <div id={`${cards.helpers[3]}`} onClick={() => this.sound(cards.deck[cards.helpers[3]].audio)}
-             className={`card no-margin helper-word ${cards.deck[cards.helpers[3]].part_of_speech}`}>
+             className={`card no-margin helper-word verb ${cards.deck[cards.helpers[3]].part_of_speech}`}>
              <span>{cards.deck[cards.helpers[3]].word}</span></div>
       </div>
+
+      <div className='grammar-board flex hidden'>
+        <div className='verb' onDragOver={(event) => event.preventDefault()}
+             onDrop={this.drop}></div>
+        <div className='prep' onDragOver={(event) => event.preventDefault()}
+             onDrop={this.drop}></div>
+      </div>
+
+      {/* <div className='grammar-board flex hidden'> //atypical usage
+        <div className='number' onDragOver={(event) => event.preventDefault()}
+             onDrop={this.drop}></div>
+        <div className='verb' onDragOver={(event) => event.preventDefault()}
+             onDrop={this.drop}></div>
+        <div className='adv' onDragOver={(event) => event.preventDefault()}
+             onDrop={this.drop}></div>
+      </div> */}
+
+      {/* <div className='grammar-board flex hidden'>
+        <div className='number' onDragOver={(event) => event.preventDefault()}
+             onDrop={this.drop}></div>
+        <div className='number' onDragOver={(event) => event.preventDefault()}
+             onDrop={this.drop}></div>
+      </div> */}
 
       <div className='grammar-board flex hidden'>
         <div className='verb' onDragOver={(event) => event.preventDefault()}
@@ -125,7 +148,7 @@ export default class SentenceArea extends React.Component {
         <div className='verb' onDragOver={(event) => event.preventDefault()}
              onDrop={this.drop}></div>
         <div id={`${cards.helpers[3]}`} onClick={() => this.sound(cards.deck[cards.helpers[3]].audio)}
-             className={`card no-margin helper-word ${cards.deck[cards.helpers[3]].part_of_speech}`}>
+             className={`card no-margin helper-word verb ${cards.deck[cards.helpers[3]].part_of_speech}`}>
              <span>{cards.deck[cards.helpers[3]].word}</span></div>
         <div className='adv' onDragOver={(event) => event.preventDefault()}
              onDrop={this.drop}></div>

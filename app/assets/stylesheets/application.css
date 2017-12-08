@@ -24,6 +24,7 @@ body {
 
 #instructions {
   margin: 16px 0px 0px;
+  text-align: center;
 }
 
 .ghostwhite {
@@ -164,10 +165,13 @@ body {
 
 .suffix {
   box-shadow: none;
-  background-color: tomato;
   max-width: 16px;
   box-sizing: border-box;
   padding: 1px 2px 0;
+}
+
+.number {
+  background-color: beige;
 }
 
 .noun {

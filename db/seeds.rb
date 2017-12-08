@@ -25,9 +25,9 @@ Card.create({ word: 'up', part_of_speech: 'adv',
               image: File.new('app/assets/images/up.png'),
               audio: File.new('app/assets/audios/up.m4a' )})
 
-Card.create({ word: 'one', part_of_speech: 'number',
-              image: File.new('app/assets/images/one.png'),
-              audio: File.new('app/assets/audios/one.m4a' )})
+# Card.create({ word: 'one', part_of_speech: 'number',
+#               image: File.new('app/assets/images/one.png'),
+#               audio: File.new('app/assets/audios/one.m4a' )})
 Card.create({ word: 'I', part_of_speech: 'pron',
               image: File.new('app/assets/images/me.png'),
               audio: File.new('app/assets/audios/I.m4a' )})
