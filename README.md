@@ -1,6 +1,14 @@
-# GrammarBoard
+# [GrammarBoard](https://grammar-board.herokuapp.com)
 
-__IS__ a tool for English language learners. Just like toddlers put colored blocks into slots of the proper shape, GrammarBoard users learn both vocabulary and grammar in a similarly interactive manner--all without needing to know a word!
+__IS__ a tool for English language learners built with React/Redux, Rails, and plain JavaScript. Just like toddlers put colored blocks into slots of the proper shape, GrammarBoard users learn both vocabulary and grammar in a similarly interactive manner--all without needing to know a word!
+
+### Features
+
+* cards with an image-side, a text-side, and audio
+* drag & drop
+* auto-triggering of audio
+* "pop-back" functionality
+* shuffling
 
 ## Gameplay
 
@@ -12,6 +20,45 @@ In addition, the text-side has a background color to represent the word's part o
 
 If the colors don't match, no drop is made; the word goes back to its prior location. If the colors match, the word is dropped into the sentence area. When all `div`s in the sentence area are filled, the audio of each word is triggered in order--a read-aloud of the sentence. Then, the words revert back to their prior locations in the grid.
 
+![gameplay](https://github.com/English3000/GrammarBoard/blob/master/gameplay.png)
+
+### Code for Auto-triggering Sentence && Popping Back Words
+```javascript
+
+setTimeout(() => {
+  if (Array.from(document.querySelector('div.grammar-board.flex.visible').children).every(el => el.hasChildNodes())) {
+    let words = Array.from(document.querySelector('div.grammar-board.flex.visible').children);
+    for (let i = 0; i < words.length; i++) {
+      setTimeout(() => words[i].children[0].click(), 750 * i);
+    }
+    setTimeout(() => {
+      let cards = Array.from(document.querySelectorAll('div.card'));
+      words.forEach(el => {
+        if (!el.className.includes('suffix')) {
+          let wordDiv = el.removeChild(el.children[0]);
+          cards.forEach(cardDiv => {
+            if (!cardDiv.hasChildNodes() && wordDiv !== null) {
+              if (cardDiv.parentElement.id) {
+                if (wordDiv.className.includes('helper-word')) {
+                  cardDiv.appendChild(wordDiv);
+                  wordDiv = null;
+                } else {
+                  return;
+                }
+              } else {
+                cardDiv.appendChild(wordDiv);
+                wordDiv = null;
+              }
+            }
+          });
+        }
+      });
+    }, 750 * words.length);
+  }
+}, 0);
+
+```
+
 In addition, users can deal themselves a new hand of cards by clicking a button. Also, users can change to a different sentence structure by clicking a different icon.
 
 ## Methodology & Seed Data
@@ -22,42 +69,19 @@ Cards begin on the image-side so that users can recognize them. Clicking them tr
 
 The background-color of the text-side is a hack to teach grammar without the need for complex algorithms. And the sentence audio allows users to hear different words all put together to convey meaning. Even if they don't understand what is being said, they can refer back to the image-side to get some sense. In addition, they get a feel for grammar in the way toddlers can understand shapes and colors better by putting blocks into corresponding pegholes.
 
-## Layout
+## Timeline
 
-### card component
-![card](https://github.com/English3000/GrammarBoard/blob/master/word.png)
+I had already conceived of GrammarBoard as a tool for teaching students of English. Now with sufficient development experience, I decided to build it on a more accessible medium.
 
-### board component
-![board](https://github.com/English3000/GrammarBoard/blob/master/board.png)
+Including debugging, I built this game in under 20 hours, working on it part-time over one week. I already had the seed data and images prepared, so I only had to prepare audio files. Most of my debugging occurred at the beginning of the project, troubleshooting AWS to get my assets appearing.
 
-### extra features (if time)
-![extras](https://github.com/English3000/GrammarBoard/blob/master/extras.png)
+My general pattern of development was to complete one component, build out the next, and then refactor so that the right words appeared in the right places. My strategy was to create a new array of word ids for grammatical/syntactical words and filter them out from the main array of ids.
 
-## Execution:
-#### 0. seed database
-  * words, their parts of speech, images, audio
-  * AJAX call & redux cycle to fetch word objects
+My backend is light, with only one controller, one action, and one view (and thus only one AJAX request with a loading icon). In addition, images are preloaded using a hidden `div` with all of them as backgrounds.
 
-#### 1. component skeletons & basic logic
-  * skeleton WordGrid component (with basic CSS)
-  * skeleton Card component (with basic CSS)
-  * skeleton SentenceArea component (with basic CSS)
-  * logic for shuffling deck into random order
-  * logic for dropping cards into the sentence area (or rejecting drops)
+My other significant portion of debugging involved preventing cards from mutating or being lost. First, I made cards pop back whenever the WordGrid or SentenceArea is shuffled (which prevents mutations). Next, I needed to implement conditional logic so that cards would pop back to the right spots (as opposed to a non-grammatical word being popped to the Sidebar area). Last, during user testing, I discovered a bug where a text-side card could be dragged into an image-side card's spot (which I fixed with a little more conditional logic).
 
-#### 2. basic functionality
-  * making Cards draggable & droppable
-  * making Cards trigger audio & flip on click
-  * making SentenceArea trigger audio of each Card in order if all its `div`s are filled
+### Additional Technologies Used
 
-#### 3. higher functionality
-  * dealing a new hand of cards
-  * changing to a different grammar board (sequence of `div`s) in the SentenceArea
-  * creating a sidebar of non-image helper words (e.g. _the_, _to_) with __basic functionality__
-
-#### 4. polish
-  * appealing CSS for all components
-  * engaging effects on interaction with components
-  * clear UI for user to play game
-
-_Libraries: [howler.js](https://github.com/goldfire/howler.js#documentation) for audio; HTML5 for drag & drop; vanilla JS for functionality_
+* _howler.js_ for audio
+* AWS/Paperclip for asset storage
