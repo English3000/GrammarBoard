@@ -82,7 +82,7 @@ export default class SentenceArea extends React.Component {
     const {cards} = this.props;
     return (<div><div id='sentence-area' className='flex'>
       <div className='flex-middle absolute arrow'><div><p>DRAG HERE</p>
-        <p><i className='fa fa-hand-pointer-o'></i> <i className='fa fa-arrow-right'></i></p></div></div>
+        <p><i className='fa fa-hand-paper-o'></i> <i className='fa fa-arrow-right'></i></p></div></div>
       <div className='grammar-board flex visible'>
         <div className='article' onDragOver={(event) => event.preventDefault()}
              onDrop={this.drop}></div>

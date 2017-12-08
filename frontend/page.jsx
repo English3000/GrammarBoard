@@ -14,10 +14,20 @@ export default class GrammarBoard extends React.Component {
 
     return (this.props.pageLoading.status ? <LoadingIcon/> : Object.keys(cards).length > 0 ? <div>
       <div className='preload hidden'></div>
+      <div className='modal flex-center flex-middle' onClick={() => {document.querySelector('.modal').className = 'hidden';}}>
+        <ul id='description'>
+          <h2><i className='fa fa-square green'></i>&nbsp;<i className='fa fa-square yellow'></i>&nbsp;<i className='fa fa-square red'></i>&emsp;GrammarBoard</h2>
+          <p></p>
+          <li>Associate images with sounds and words!</li>
+          <li><em>Learn words' parts of speech!</em></li>
+          <li>Practice grammar and sentence-building!</li>
+        </ul>
+      </div>
       <p id='instructions'>
-        <i className='fa fa-mouse-pointer'></i> Flip,&nbsp;
-        <i className='fa fa-hand-pointer-o'></i> Drag,&nbsp;
-        <i className='fa fa-refresh'></i> Repeat!
+        FLIP <i className='fa fa-mouse-pointer'></i><i className='fa fa-picture-o'></i> image,
+        DRAG word <i className='fa fa-hand-paper-o'></i><i className='fa fa-font'></i>&nbsp;&nbsp;
+        <i className='fa fa-arrow-right'></i><i className='fa fa-square'></i> TO matching color,&nbsp;
+        <i className='fa fa-refresh'></i> REPEAT!
       </p>
       <div className='flex-center'>
         <Sidebar cards={cards}/>

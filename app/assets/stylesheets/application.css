@@ -19,14 +19,26 @@ body {
 }
 
 .card.no-margin:hover {
-  cursor: pointer;
+  cursor: -webkit-grab;
+  cursor: -moz-grab;
+}
+
+.card.no-margin:active {
+  cursor: -webkit-grabbing;
+  cursor: -moz-grabbing;
 }
 
 #instructions {
   margin: 16px 0px 0px;
   text-align: center;
   text-shadow: 0 0 1px white;
-  font-weight: bold;
+  /*font-weight: bold;*/
+}
+
+#instructions .fa {
+  background-color: white;
+  /*border-radius: 2px;*/
+  padding: 2px 2px;
 }
 
 .ghostwhite {
@@ -212,6 +224,49 @@ body {
 
 #sidebar .card {
   margin: 0;
+}
+
+.modal {
+  background-color: rgba(0, 0, 0, 0.8);
+  position: fixed;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  cursor: pointer;
+}
+
+#description {
+  background-color: white;
+  padding: 20px 30px 25px 30px;
+  border: 2px solid black;
+  border-radius: 15px;
+  position: relative;
+  top: -20px;
+}
+
+#description h2 {
+  margin: 0 0 15px;
+  text-align: center;
+}
+
+#description li {
+  position: relative;
+  left: 7.5px;
+  margin-top: 7.5px;
+}
+
+.green {
+  color: green;
+}
+
+.yellow {
+  color: yellow;
+}
+
+.red {
+  color: red;
 }
 
 /* Source: https://perishablepress.com/preload-images-css3/ */

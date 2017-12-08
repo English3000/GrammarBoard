@@ -4,8 +4,6 @@ __IS__ a tool for English language learners. Just like toddlers put colored bloc
 
 ## Gameplay
 
-![grammar-board](https://github.com/English3000/GrammarBoard/blob/master/grammar-board.png)
-
 There is a grid of cards. Each card has two sides: an image and a word. Cards start on the image-side. To see the word, click the card--that triggers an audio recording of the word, then you'll see it.
 
 In addition, the text-side has a background color to represent the word's part of speech. The gameplay is to drag the word into a sentence area. The sentence area is made up of `div`s with different background colors, representing different sentence structures. Just like putting blocks into pegholes of the proper shape, the user drags words into `div`s of a matching color.
