@@ -83,5 +83,5 @@ My other significant portion of debugging involved preventing cards from mutatin
 
 ### Additional Technologies Used
 
-* _howler.js_ for audio
+* _[howler.js](https://howlerjs.com)_ for audio
 * AWS/Paperclip for asset storage
