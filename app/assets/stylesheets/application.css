@@ -13,7 +13,12 @@
  *= require_tree .
  *= require_self
  */
-.card.no-margin:hover, .grammar-board:hover {
+body {
+  font-family: 'Corbel', sans-serif;
+  font-size: 20px;
+}
+
+.card.no-margin:hover {
   cursor: pointer;
 }
 
@@ -56,7 +61,7 @@
   border-radius: 5px;
   box-shadow: 0 0 1px black;
   height: 100%;
-  max-height: 30px;
+  max-height: 37.5px;
   margin-left: 5px;
   cursor: pointer;
 }
@@ -101,7 +106,7 @@
 
 .helper-word span {
   position: relative;
-  top: 28%;
+  top: 36%;
 }
 
 .text-side {
@@ -128,6 +133,21 @@
   background: radial-gradient(ghostwhite, dimgray);
 }
 
+.absolute {
+  position: fixed;
+}
+
+.arrow {
+  font-size: 36px;
+  color: white;
+  text-align: center;
+  pointer-events: none;
+}
+
+.arrow p {
+  margin: 5px 0 5px 10px;
+}
+
 .grammar-board {
   margin: 0 auto;
   max-width: 900px;
@@ -142,11 +162,12 @@
   background-color: tomato;
 }
 
-.s {
+.suffix {
+  box-shadow: none;
   background-color: tomato;
   max-width: 16px;
   box-sizing: border-box;
-  padding: 49px/* 86px */ 2px 0;
+  padding: 1px 2px 0;
 }
 
 .noun {
@@ -180,9 +201,9 @@
 #sidebar {
   position: relative;
   top: 30px;
+  margin: 0 7.5px 0 10px;
 }
 
 #sidebar .card {
   margin: 0;
-  margin-right: 10px;
 }

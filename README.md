@@ -54,7 +54,7 @@ The background-color of the text-side is a hack to teach grammar without the nee
   * creating a sidebar of non-image helper words (e.g. _the_, _to_) with __basic functionality__ [__COMPLETED__]
 
 #### 4. polish
-  * appealing CSS for all components (use contiguous squares instead of margins w/ rounded corners)
+  * appealing CSS for all components [__as COMPLETED as will be__]
   * engaging effects on interaction with components
   * clear UI for user to play game [__COMPLETED__]
 

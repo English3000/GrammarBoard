@@ -40,7 +40,7 @@ export default class WordGrid extends React.Component {
   drop(event) {
     event.preventDefault();
     let card = event.dataTransfer.getData('text');
-    if (!event.target.hasChildNodes()) {
+    if (!event.target.hasChildNodes() && !event.target.className.includes('side1')) {
       event.target.appendChild(document.getElementById(card));
     }
   }

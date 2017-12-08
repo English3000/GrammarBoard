@@ -1,4 +1,5 @@
 import React from 'react';
+import { Howl } from 'howler';
 
 export default class SentenceArea extends React.Component {
   drop(event) {
@@ -18,13 +19,15 @@ export default class SentenceArea extends React.Component {
         setTimeout(() => {
           let cards = Array.from(document.querySelectorAll('div.card'));
           words.forEach(el => {
-            let wordDiv = el.removeChild(el.children[0]);
-            cards.forEach(cardDiv => {
-              if (!cardDiv.hasChildNodes() && wordDiv !== null) {
-                cardDiv.appendChild(wordDiv);
-                wordDiv = null;
-              }
-            });
+            if (!el.className.includes('suffix')) {
+              let wordDiv = el.removeChild(el.children[0]);
+              cards.forEach(cardDiv => {
+                if (!cardDiv.hasChildNodes() && wordDiv !== null) {
+                  cardDiv.appendChild(wordDiv);
+                  wordDiv = null;
+                }
+              });
+            }
           });
         }, 750 * words.length);
       }
@@ -39,8 +42,17 @@ export default class SentenceArea extends React.Component {
         let wordDiv = el.removeChild(el.children[0]);
         cards.forEach(cardDiv => {
           if (!cardDiv.hasChildNodes() && wordDiv !== null) {
-            cardDiv.appendChild(wordDiv);
-            wordDiv = null;
+            if (cardDiv.parentElement.id) {
+              if (wordDiv.className.includes('helper-word')) {
+                cardDiv.appendChild(wordDiv);
+                wordDiv = null;
+              } else {
+                return;
+              }
+            } else {
+              cardDiv.appendChild(wordDiv);
+              wordDiv = null;
+            }
           }
         });
       }
@@ -51,8 +63,16 @@ export default class SentenceArea extends React.Component {
     second.className = 'grammar-board flex visible';
   }
 
+  sound(audio) {
+    const pronunciation = new Howl({ src: [ audio ] });
+    pronunciation.play();
+  }
+
   render() {
+    const {cards} = this.props;
     return (<div><div id='sentence-area' className='flex'>
+      <div className='flex-middle absolute arrow'><div><p>DRAG HERE</p>
+        <p><i className='fa fa-hand-pointer-o'></i> <i className='fa fa-arrow-right'></i></p></div></div>
       <div className='grammar-board flex visible'>
         <div className='article' onDragOver={(event) => event.preventDefault()}
              onDrop={this.drop}></div>
@@ -60,7 +80,9 @@ export default class SentenceArea extends React.Component {
              onDrop={this.drop}></div>
         <div className='verb' onDragOver={(event) => event.preventDefault()}
              onDrop={this.drop}></div>
-        {/* <div className='s'>s</div> */}
+        <div id={`${cards.helpers[3]}`} onClick={() => this.sound(cards.deck[cards.helpers[3]].audio)}
+             className={`card no-margin helper-word ${cards.deck[cards.helpers[3]].part_of_speech}`}>
+             <span>{cards.deck[cards.helpers[3]].word}</span></div>
       </div>
 
       <div className='grammar-board flex hidden'>
@@ -72,7 +94,9 @@ export default class SentenceArea extends React.Component {
              onDrop={this.drop}></div>
         <div className='verb' onDragOver={(event) => event.preventDefault()}
              onDrop={this.drop}></div>
-        {/* <div className='s'>s</div> */}
+        <div id={`${cards.helpers[3]}`} onClick={() => this.sound(cards.deck[cards.helpers[3]].audio)}
+             className={`card no-margin helper-word ${cards.deck[cards.helpers[3]].part_of_speech}`}>
+             <span>{cards.deck[cards.helpers[3]].word}</span></div>
         <div className='adv' onDragOver={(event) => event.preventDefault()}
              onDrop={this.drop}></div>
       </div>
@@ -86,7 +110,6 @@ export default class SentenceArea extends React.Component {
              onDrop={this.drop}></div>
         <div className='verb' onDragOver={(event) => event.preventDefault()}
              onDrop={this.drop}></div>
-        {/* <div className='s'>s</div> */}
       </div>
 
       <div className='grammar-board flex hidden'>
