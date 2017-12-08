@@ -33,29 +33,29 @@ The background-color of the text-side is a hack to teach grammar without the nee
 
 ## Execution:
 #### 0. seed database
-  * words, their parts of speech, images, audio [___PARTIALLY completed___]
-  * AJAX call & redux cycle to fetch word objects [__COMPLETED__]
+  * words, their parts of speech, images, audio
+  * AJAX call & redux cycle to fetch word objects
 
-#### 1. component skeletons & basic logic [__COMPLETED__]
+#### 1. component skeletons & basic logic
   * skeleton WordGrid component (with basic CSS)
   * skeleton Card component (with basic CSS)
   * skeleton SentenceArea component (with basic CSS)
   * logic for shuffling deck into random order
   * logic for dropping cards into the sentence area (or rejecting drops)
 
-#### 2. basic functionality [__COMPLETED__]
+#### 2. basic functionality
   * making Cards draggable & droppable
   * making Cards trigger audio & flip on click
   * making SentenceArea trigger audio of each Card in order if all its `div`s are filled
 
 #### 3. higher functionality
-  * dealing a new hand of cards [__COMPLETED__]
-  * changing to a different grammar board (sequence of `div`s) in the SentenceArea [___MOSTLY completed___] (make S `div` w/ sound)
-  * creating a sidebar of non-image helper words (e.g. _the_, _to_) with __basic functionality__ [__COMPLETED__]
+  * dealing a new hand of cards
+  * changing to a different grammar board (sequence of `div`s) in the SentenceArea
+  * creating a sidebar of non-image helper words (e.g. _the_, _to_) with __basic functionality__
 
 #### 4. polish
-  * appealing CSS for all components [__as COMPLETED as will be__]
+  * appealing CSS for all components
   * engaging effects on interaction with components
-  * clear UI for user to play game [__COMPLETED__]
+  * clear UI for user to play game
 
 _Libraries: [howler.js](https://github.com/goldfire/howler.js#documentation) for audio; HTML5 for drag & drop; vanilla JS for functionality_
