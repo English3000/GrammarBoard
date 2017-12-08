@@ -13,7 +13,7 @@ export default class GrammarBoard extends React.Component {
     const {cards} = this.props;
 
     return (this.props.pageLoading.status ? <LoadingIcon/> : Object.keys(cards).length > 0 ? <div>
-      <p><i className='fa fa-mouse-pointer'></i> Click, <i className='fa fa-hand-pointer-o'></i> Drag, and <i className='fa fa-refresh'></i> Repeat!</p>
+      <p id='instructions'><i className='fa fa-mouse-pointer'></i> Click, <i className='fa fa-hand-pointer-o'></i> Drag, <i className='fa fa-refresh'></i> Repeat!</p>
       <div className='flex-center'>
         <Sidebar cards={cards}/>
         <WordGrid cards={cards}/>

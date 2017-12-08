@@ -13,8 +13,12 @@
  *= require_tree .
  *= require_self
  */
-.card:hover, .grammar-board:hover {
+.card.no-margin:hover, .grammar-board:hover {
   cursor: pointer;
+}
+
+#instructions {
+  margin: 16px 0px 0px;
 }
 
 .ghostwhite {
@@ -58,11 +62,11 @@
 }
 
 .card {
-  width: 150px;
-  height: 150px;
-  border-radius: 15px;
-  box-shadow: 0 0 1.5px black;
-  margin: 12.5px;
+  width: 162.5px;
+  height: 162.5px;
+  /*border-radius: 15px;*/
+  box-shadow: 0 0 1.5px gray;
+  margin: 7.5px;
 }
 
 /* guidance from: https://stackoverflow.com/questions/9058801/flip-div-with-two-sides-of-html */
@@ -70,8 +74,8 @@
   backface-visibility: hidden;
   transform-origin: 50% 50% 0px;
   transition: all 1.5s;
-  width: 150px;
-  height: 150px;
+  width: 162.5px;
+  height: 162.5px;
   border-radius: 15px;
   object-fit: contain;
 }
@@ -81,7 +85,7 @@
   text-align: center;
   top: -60%;
   display: block;
-  width: 150px;
+  width: 162.5px;
 }
 
 .image-side {
@@ -121,12 +125,12 @@
   border-radius: 15px;
   padding: 12.5px;
   height: 175px;
-  background: radial-gradient(white, ghostwhite);
+  background: radial-gradient(ghostwhite, dimgray);
 }
 
 .grammar-board {
   margin: 0 auto;
-  max-width: 725px;
+  max-width: 900px;
 }
 
 .grammar-board div {
@@ -171,4 +175,14 @@
 
 .conj {
   background-color: lightblue;
+}
+
+#sidebar {
+  position: relative;
+  top: 30px;
+}
+
+#sidebar .card {
+  margin: 0;
+  margin-right: 10px;
 }

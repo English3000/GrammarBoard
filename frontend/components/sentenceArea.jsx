@@ -35,7 +35,7 @@ export default class SentenceArea extends React.Component {
     let words = Array.from(document.querySelector('div.grammar-board.flex.visible').children);
     let cards = Array.from(document.querySelectorAll('div.card'));
     words.forEach(el => {
-      if (el.hasChildNodes()) {
+      if (el.hasChildNodes()) { //issue is the S <div>
         let wordDiv = el.removeChild(el.children[0]);
         cards.forEach(cardDiv => {
           if (!cardDiv.hasChildNodes() && wordDiv !== null) {
@@ -60,7 +60,7 @@ export default class SentenceArea extends React.Component {
              onDrop={this.drop}></div>
         <div className='verb' onDragOver={(event) => event.preventDefault()}
              onDrop={this.drop}></div>
-        <div className='s'>s</div>
+        {/* <div className='s'>s</div> */}
       </div>
 
       <div className='grammar-board flex hidden'>
@@ -72,9 +72,21 @@ export default class SentenceArea extends React.Component {
              onDrop={this.drop}></div>
         <div className='verb' onDragOver={(event) => event.preventDefault()}
              onDrop={this.drop}></div>
-        <div className='s'>s</div>
+        {/* <div className='s'>s</div> */}
         <div className='adv' onDragOver={(event) => event.preventDefault()}
              onDrop={this.drop}></div>
+      </div>
+
+      <div className='grammar-board flex hidden'>
+        <div className='pron' onDragOver={(event) => event.preventDefault()}
+             onDrop={this.drop}></div>
+        <div className='verb' onDragOver={(event) => event.preventDefault()}
+             onDrop={this.drop}></div>
+        <div className='conj' onDragOver={(event) => event.preventDefault()}
+             onDrop={this.drop}></div>
+        <div className='verb' onDragOver={(event) => event.preventDefault()}
+             onDrop={this.drop}></div>
+        {/* <div className='s'>s</div> */}
       </div>
 
       <div className='grammar-board flex hidden'>
