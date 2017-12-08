@@ -1,6 +1,6 @@
 # [GrammarBoard](https://grammar-board.herokuapp.com)
 
-__IS__ a tool for English language learners built with React/Redux, Rails, and plain JavaScript. Just like toddlers put colored blocks into slots of the proper shape, GrammarBoard users learn both vocabulary and grammar in a similarly interactive manner--all without needing to know a word!
+__IS__ a tool for English language learners built with React/Redux, Rails, and plain JavaScript. Just like toddlers put colored blocks into slots of the proper shape, [GrammarBoard](https://grammar-board.herokuapp.com) users learn both vocabulary and grammar in a similarly interactive manner--all without needing to know a word!
 
 ### Features
 
@@ -71,7 +71,7 @@ The background-color of the text-side is a hack to teach grammar without the nee
 
 ## Timeline
 
-I had already conceived of GrammarBoard as a tool for teaching students of English. Now with sufficient development experience, I decided to build it on a more accessible medium.
+I had already conceived of [GrammarBoard](https://grammar-board.herokuapp.com) as a tool for teaching students of English. Now with sufficient development experience, I decided to build it on a more accessible medium.
 
 Including debugging, I built this game in under 20 hours, working on it part-time over one week. I already had the seed data and images prepared, so I only had to prepare audio files. Most of my debugging occurred at the beginning of the project, troubleshooting AWS to get my assets appearing.
 
