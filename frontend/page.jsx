@@ -13,8 +13,9 @@ export default class GrammarBoard extends React.Component {
     const {cards} = this.props;
 
     return (this.props.pageLoading.status ? <LoadingIcon/> : Object.keys(cards).length > 0 ? <div>
+      <div className='preload hidden'></div>
       <p id='instructions'>
-        <i className='fa fa-mouse-pointer'></i> Click,&nbsp;
+        <i className='fa fa-mouse-pointer'></i> Flip,&nbsp;
         <i className='fa fa-hand-pointer-o'></i> Drag,&nbsp;
         <i className='fa fa-refresh'></i> Repeat!
       </p>

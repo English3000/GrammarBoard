@@ -25,10 +25,12 @@ body {
 #instructions {
   margin: 16px 0px 0px;
   text-align: center;
+  text-shadow: 0 0 1px white;
+  font-weight: bold;
 }
 
 .ghostwhite {
-  background-color: ghostwhite;
+  background-color: rgba(0, 191, 255, 0.8);/*deepskyblue;*/
 }
 
 .flex {
@@ -131,7 +133,7 @@ body {
   border-radius: 15px;
   padding: 12.5px;
   height: 175px;
-  background: radial-gradient(ghostwhite, dimgray);
+  background: radial-gradient(cyan, blue);
 }
 
 .absolute {
@@ -210,4 +212,49 @@ body {
 
 #sidebar .card {
   margin: 0;
+}
+
+/* Source: https://perishablepress.com/preload-images-css3/ */
+.preload {
+  background: url('big.png') no-repeat -9999px -9999px;
+  background: url('big.png') no-repeat -9999px -9999px,
+              url('black.png') no-repeat -9999px -9999px,
+              url('car.png') no-repeat -9999px -9999px,
+              url('child.png') no-repeat -9999px -9999px,
+              url('day.png') no-repeat -9999px -9999px,
+              url('door.png') no-repeat -9999px -9999px,
+              url('down.png') no-repeat -9999px -9999px,
+              url('eye.png') no-repeat -9999px -9999px,
+              url('five.png') no-repeat -9999px -9999px,
+              url('four.png') no-repeat -9999px -9999px,
+              url('hand.png') no-repeat -9999px -9999px,
+              url('head.png') no-repeat -9999px -9999px,
+              url('house.png') no-repeat -9999px -9999px,
+              url('in.png') no-repeat -9999px -9999px,
+              url('large.png') no-repeat -9999px -9999px,
+              url('left.png') no-repeat -9999px -9999px,
+              url('little.png') no-repeat -9999px -9999px,
+              url('man.png') no-repeat -9999px -9999px,
+              url('me.png') no-repeat -9999px -9999px,
+              url('night.png') no-repeat -9999px -9999px,
+              url('office.png') no-repeat -9999px -9999px,
+              url('old.png') no-repeat -9999px -9999px,
+              url('on.png') no-repeat -9999px -9999px,
+              url('one.png') no-repeat -9999px -9999px,
+              url('open.png') no-repeat -9999px -9999px,
+              url('out.png') no-repeat -9999px -9999px,
+              url('red.png') no-repeat -9999px -9999px,
+              url('right.png') no-repeat -9999px -9999px,
+              url('school.png') no-repeat -9999px -9999px,
+              url('sit.png') no-repeat -9999px -9999px,
+              url('small.png') no-repeat -9999px -9999px,
+              url('stand.png') no-repeat -9999px -9999px,
+              url('three.png') no-repeat -9999px -9999px,
+              url('two.png') no-repeat -9999px -9999px,
+              url('under.png') no-repeat -9999px -9999px,
+              url('up.png') no-repeat -9999px -9999px,
+              url('white.png') no-repeat -9999px -9999px,
+              url('woman.png') no-repeat -9999px -9999px,
+              url('write.png') no-repeat -9999px -9999px,
+              url('you.png') no-repeat -9999px -9999px;
 }
