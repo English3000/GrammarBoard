@@ -23,8 +23,17 @@ export default class SentenceArea extends React.Component {
               let wordDiv = el.removeChild(el.children[0]);
               cards.forEach(cardDiv => {
                 if (!cardDiv.hasChildNodes() && wordDiv !== null) {
-                  cardDiv.appendChild(wordDiv);
-                  wordDiv = null;
+                  if (cardDiv.parentElement.id) {
+                    if (wordDiv.className.includes('helper-word')) {
+                      cardDiv.appendChild(wordDiv);
+                      wordDiv = null;
+                    } else {
+                      return;
+                    }
+                  } else {
+                    cardDiv.appendChild(wordDiv);
+                    wordDiv = null;
+                  }
                 }
               });
             }
