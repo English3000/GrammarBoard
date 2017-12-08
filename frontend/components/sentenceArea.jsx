@@ -67,7 +67,7 @@ export default class SentenceArea extends React.Component {
       }
     });
 
-    let second = document.querySelectorAll('div.grammar-board.flex.hidden')[Math.floor(Math.random() * 2)];
+    let second = document.querySelectorAll('div.grammar-board.flex.hidden')[Math.floor(Math.random() * 5)];
     document.querySelector('div.grammar-board.flex.visible').className = 'grammar-board flex hidden';
     second.className = 'grammar-board flex visible';
   }
@@ -92,6 +92,15 @@ export default class SentenceArea extends React.Component {
         <div id={`${cards.helpers[3]}`} onClick={() => this.sound(cards.deck[cards.helpers[3]].audio)}
              className={`card no-margin helper-word ${cards.deck[cards.helpers[3]].part_of_speech}`}>
              <span>{cards.deck[cards.helpers[3]].word}</span></div>
+      </div>
+
+      <div className='grammar-board flex hidden'>
+        <div className='verb' onDragOver={(event) => event.preventDefault()}
+             onDrop={this.drop}></div>
+        <div className='article' onDragOver={(event) => event.preventDefault()}
+             onDrop={this.drop}></div>
+        <div className='noun' onDragOver={(event) => event.preventDefault()}
+             onDrop={this.drop}></div>
       </div>
 
       <div className='grammar-board flex hidden'>
