@@ -10,6 +10,8 @@ Card.create({ word: 'and', part_of_speech: 'conj',
               audio: File.new('app/assets/audios/and.m4a') })
 Card.create({ word: 's', part_of_speech: 'suffix',
               audio: File.new('app/assets/audios/s.m4a') })
+Card.create({ word: '_demo', part_of_speech: 'N/A',
+              image: File.new('app/assets/images/_demo.gif') })
 
 
 Card.create({ word: 'in', part_of_speech: 'prep',

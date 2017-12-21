@@ -8,7 +8,7 @@ json.deck do
       json.image asset_path(card.image.url(:original))
       json.audio asset_path(card.audio.url(:original))
     end
-    if card.image.url == ""
+    if card.image.url == "" || card.audio.url == ""
       grammar_words.push(card) #'hard-coded' b/c have helpers at start of seeds
     end
   end
