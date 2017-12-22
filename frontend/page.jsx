@@ -22,7 +22,7 @@ export default class GrammarBoard extends React.Component {
             <li><em>Learn words' parts of speech!</em></li>
             <li>Practice grammar and sentence-building!</li>
           </ul>
-          <img src={cards.deck[cards.helpers[4]].image} width='300' height='400' alt='gif'/>
+          <img src={cards.deck[cards.helpers[4]].image} width='480' height='319' alt='gif'/>
         </div>
       </div>
       <p id='instructions'>
